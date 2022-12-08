@@ -12,12 +12,12 @@ const Sidebar = () => {
         </div>
         <div className="absolute top-[20vh] left-0 w-full pl-12 h-auto flex flex-col justify-center items-center">
             <>
-              <div className="w-full flex flex-row justify-start p-3 items-center  text-primaryRed text-xl"><span className="flex flex-row items-start"><Icon icon="material-symbols:dashboard" className="text-primaryRed h-7 w-7  mr-2" />Dashboard</span></div>
-              <div className="w-full flex flex-row justify-start p-3 items-center  text-primaryRed text-xl"><span className="flex flex-row items-start"><Icon icon="ic:baseline-edit-off" className="text-primaryRed h-7 w-7  mr-2" />Profiles</span></div>
-              <div className="w-full flex flex-row justify-start p-3 items-center  text-primaryRed text-xl"><span className="flex flex-row items-start"><Icon icon="mdi:users" className="text-primaryRed h-7 w-7  mr-2" />Utilisateurs</span></div>
-              <div className="w-full flex flex-row justify-start p-3 items-center  text-primaryRed text-xl"><span className="flex flex-row items-start"><Icon icon="fluent:live-24-filled" className="text-primaryRed h-7 w-7  mr-2" />Live stats</span></div>
-              <div className="w-full flex flex-row justify-start p-3 items-center  text-primaryRed text-xl"><span className="flex flex-row items-start"><Icon icon="ri:user-settings-fill" className="text-primaryRed h-7 w-7  mr-2" />Gestionnaires</span></div>
-              <div className="w-full flex flex-row justify-start p-3 items-center  text-primaryRed text-xl"><span className="flex flex-row items-start"><Icon icon="mdi:cart-variant" className="text-primaryRed h-7 w-7  mr-2" />Commands</span></div>
+              <div className="w-full flex flex-row justify-start p-4 items-center  text-primaryRed text-xl"><span className="font-Steradian_md text-primaryBrown flex flex-row items-start"><Icon icon="material-symbols:dashboard" className="text-primaryRed h-7 w-7  mr-2" />Dashboard</span></div>
+              <div className="w-full flex flex-row justify-start p-4 items-center  text-primaryRed text-xl"><span className="font-Steradian_md text-[#CCB7B7] flex flex-row items-start"><Icon icon="ic:baseline-edit-off" className="text-primaryRed h-7 w-7  mr-2" />Profiles</span></div>
+              <div className="w-full flex flex-row justify-start p-4 items-center  text-primaryRed text-xl"><span className="font-Steradian_md text-[#CCB7B7] flex flex-row items-start"><Icon icon="mdi:users" className="text-primaryRed h-7 w-7  mr-2" />Utilisateurs</span></div>
+              <div className="w-full flex flex-row justify-start p-4 items-center  text-primaryRed text-xl"><span className="font-Steradian_md text-[#CCB7B7] flex flex-row items-start"><Icon icon="fluent:live-24-filled" className="text-primaryRed h-7 w-7  mr-2" />Live stats</span></div>
+              <div className="w-full flex flex-row justify-start p-4 items-center  text-primaryRed text-xl"><span className="font-Steradian_md text-[#CCB7B7] flex flex-row items-start"><Icon icon="ri:user-settings-fill" className="text-primaryRed h-7 w-7  mr-2" />Gestionnaires</span></div>
+              <div className="w-full flex flex-row justify-start p-4 items-center  text-primaryRed text-xl"><span className="font-Steradian_md text-[#CCB7B7] flex flex-row items-start"><Icon icon="mdi:cart-variant" className="text-primaryRed h-7 w-7  mr-2" />Commands</span></div>
             </>
         </div>
       </div>
