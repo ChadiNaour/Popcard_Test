@@ -1,0 +1,208 @@
+@font-face {
+    font-family: 'Steradian';
+    src: url('Steradian-BdIt.eot');
+    src: local('Steradian Bold Italic'), local('Steradian-BdIt'),
+        url('Steradian-BdIt.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-BdIt.woff2') format('woff2'),
+        url('Steradian-BdIt.woff') format('woff'),
+        url('Steradian-BdIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian';
+    src: url('Steradian-BlkIt.eot');
+    src: local('Steradian Black Italic'), local('Steradian-BlkIt'),
+        url('Steradian-BlkIt.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-BlkIt.woff2') format('woff2'),
+        url('Steradian-BlkIt.woff') format('woff'),
+        url('Steradian-BlkIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian';
+    src: url('Steradian-Bd.eot');
+    src: local('Steradian Bold'), local('Steradian-Bd'),
+        url('Steradian-Bd.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-Bd.woff2') format('woff2'),
+        url('Steradian-Bd.woff') format('woff'),
+        url('Steradian-Bd.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian Extra';
+    src: url('Steradian-XLt.eot');
+    src: local('Steradian Extra Light'), local('Steradian-XLt'),
+        url('Steradian-XLt.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-XLt.woff2') format('woff2'),
+        url('Steradian-XLt.woff') format('woff'),
+        url('Steradian-XLt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian';
+    src: url('Steradian-Th.eot');
+    src: local('Steradian Thin'), local('Steradian-Th'),
+        url('Steradian-Th.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-Th.woff2') format('woff2'),
+        url('Steradian-Th.woff') format('woff'),
+        url('Steradian-Th.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian';
+    src: url('Steradian-ThIt.eot');
+    src: local('Steradian Thin Italic'), local('Steradian-ThIt'),
+        url('Steradian-ThIt.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-ThIt.woff2') format('woff2'),
+        url('Steradian-ThIt.woff') format('woff'),
+        url('Steradian-ThIt.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian';
+    src: url('Steradian-RgIt.eot');
+    src: local('Steradian Italic'), local('Steradian-RgIt'),
+        url('Steradian-RgIt.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-RgIt.woff2') format('woff2'),
+        url('Steradian-RgIt.woff') format('woff'),
+        url('Steradian-RgIt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian';
+    src: url('Steradian-Blk.eot');
+    src: local('Steradian Black'), local('Steradian-Blk'),
+        url('Steradian-Blk.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-Blk.woff2') format('woff2'),
+        url('Steradian-Blk.woff') format('woff'),
+        url('Steradian-Blk.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian';
+    src: url('Steradian-MdIt.eot');
+    src: local('Steradian Medium Italic'), local('Steradian-MdIt'),
+        url('Steradian-MdIt.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-MdIt.woff2') format('woff2'),
+        url('Steradian-MdIt.woff') format('woff'),
+        url('Steradian-MdIt.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian';
+    src: url('Steradian-LtIt.eot');
+    src: local('Steradian Light Italic'), local('Steradian-LtIt'),
+        url('Steradian-LtIt.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-LtIt.woff2') format('woff2'),
+        url('Steradian-LtIt.woff') format('woff'),
+        url('Steradian-LtIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian';
+    src: url('Steradian-Lt.eot');
+    src: local('Steradian Light'), local('Steradian-Lt'),
+        url('Steradian-Lt.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-Lt.woff2') format('woff2'),
+        url('Steradian-Lt.woff') format('woff'),
+        url('Steradian-Lt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian Extra';
+    src: url('Steradian-XLtIt.eot');
+    src: local('Steradian Extra Light Italic'), local('Steradian-XLtIt'),
+        url('Steradian-XLtIt.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-XLtIt.woff2') format('woff2'),
+        url('Steradian-XLtIt.woff') format('woff'),
+        url('Steradian-XLtIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian';
+    src: url('Steradian-Md.eot');
+    src: local('Steradian Medium'), local('Steradian-Md'),
+        url('Steradian-Md.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-Md.woff2') format('woff2'),
+        url('Steradian-Md.woff') format('woff'),
+        url('Steradian-Md.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian Ultra';
+    src: url('Steradian-UltLt.eot');
+    src: local('Steradian Ultra Light'), local('Steradian-UltLt'),
+        url('Steradian-UltLt.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-UltLt.woff2') format('woff2'),
+        url('Steradian-UltLt.woff') format('woff'),
+        url('Steradian-UltLt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian Ultra';
+    src: url('Steradian-UltLtIt.eot');
+    src: local('Steradian Ultra Light Italic'), local('Steradian-UltLtIt'),
+        url('Steradian-UltLtIt.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-UltLtIt.woff2') format('woff2'),
+        url('Steradian-UltLtIt.woff') format('woff'),
+        url('Steradian-UltLtIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Steradian';
+    src: url('Steradian-Rg.eot');
+    src: local('Steradian'), local('Steradian-Rg'),
+        url('Steradian-Rg.eot?#iefix') format('embedded-opentype'),
+        url('Steradian-Rg.woff2') format('woff2'),
+        url('Steradian-Rg.woff') format('woff'),
+        url('Steradian-Rg.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
