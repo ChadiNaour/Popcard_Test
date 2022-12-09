@@ -2,13 +2,17 @@ import axios from "axios";
 
 export default {
   init: function () {
-    let baseURL = "https://mongodb.getpopcard.com/";
+    let baseURL = process.env.REACT_APP_API_URL;
+    let headers = {
+      "test-user": "chadi",
+    };
     return axios.create({
       baseURL,
-      timeout: 31000
+      timeout: 31000,
+      headers
     });
   },
-  General_stats: function (path, data) {
+  Post: function (path, data) {
     return this.init().post(path,data);
   },
 };

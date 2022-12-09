@@ -7,7 +7,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Icon } from '@iconify/react';
-import Api from "../Api/Api";
 
 function createData(Id, Profile, Number) {
   return { Id, Profile, Number };
@@ -22,19 +21,6 @@ const rows = [
 ];
 
 export default function BasicTable() {
-  useEffect(() => {
-    const General_stats = async () => {
-      try {
-        const stats = await Api.General_stats('test', { action: 0 })
-        console.log(stats);
-
-      } catch (e) {
-        console.log(e)
-      }
-
-    }
-    General_stats()
-  }, [])
   return (
     <TableContainer component={Paper} sx={{ borderRadius: "20px", width: "500px", padding: "20px", paddingTop: "10px" }}>
       <Table aria-label="simple table">
@@ -48,19 +34,17 @@ export default function BasicTable() {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <>
-              <TableRow
-                key={row.Id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-                <TableCell style={{ fontFamily: "Steradian_rg" }} component="th" scope="row">
-                  <div className='w-7 h-7 bg-primaryBrown rounded-full flex justify-center items-center text-white'>{row.Id}</div>
-                </TableCell>
-                <TableCell style={{ fontFamily: "Steradian_rg", fontSize: "17px" }} align="center"><div className='flex flex-row justify-center items-center'><div className='w-7 h-7 bg-red-200 rounded-full mr-3'></div>{row.Profile}</div></TableCell>
-                <TableCell style={{ fontFamily: "Steradian_md", fontSize: "19px" }} align="center">{row.Number}</TableCell>
-                <TableCell align='right'><Icon icon="ion:ellipsis-vertical-sharp" className="text-black h-6 w-6"/></TableCell>
-              </TableRow>
-            </>
+            <TableRow
+              key={row.Id}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell style={{ fontFamily: "Steradian_rg" }} component="th" scope="row">
+                <div className='w-7 h-7 bg-primaryBrown rounded-full flex justify-center items-center text-white'>{row.Id}</div>
+              </TableCell>
+              <TableCell style={{ fontFamily: "Steradian_rg", fontSize: "17px" }} align="center"><div className='flex flex-row justify-center items-center'><div className='w-7 h-7 bg-red-200 rounded-full mr-3'></div>{row.Profile}</div></TableCell>
+              <TableCell style={{ fontFamily: "Steradian_md", fontSize: "19px" }} align="center">{row.Number}</TableCell>
+              <TableCell align='right'><Icon icon="ion:ellipsis-vertical-sharp" className="text-black h-6 w-6" /></TableCell>
+            </TableRow>
           ))}
         </TableBody>
       </Table>
