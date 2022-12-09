@@ -4,11 +4,12 @@ import './App.css';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import LittleCard from './components/littleCard'
-import Table from "./components/Table"
+import TopProfiles from "./components/Tables/TopProfiles"
+import Stats from "./components/Tables/Stats"
 import LineText from "./components/LineText";
 import Chart from "./components/Charts";
 import Alert from "./components/Alert";
-import Api from "./api/api";
+import Api from "./Api/api";
 import { Icon } from '@iconify/react';
 
 
@@ -55,7 +56,7 @@ function App() {
         });
         await Promise.all([general_stats, top_Profiles, profile_stats, top_activities, tracking_charts, chiffre_daffaires]).then((data) => {
           setLoading(false);
-          // console.log(data)
+          console.log(data)
           setData({
             general_stats: data[0].data,
             top_Profiles: data[1].data,
@@ -83,7 +84,13 @@ function App() {
     { title: "Total Utilisateurs", value: Data?.general_stats.total_collaborators, icon: 'mdi:users' },
     { title: "% Onboarding", value: `${parseInt(percentage(Data?.general_stats.onboarding, Data?.general_stats.total_collaborators))}%`, icon: 'icon-park-outline:loading-one' },
     { title: "% Actifs", value: `${parseInt(percentage(Data?.general_stats.active, Data?.general_stats.total_collaborators))}%`, icon: 'material-symbols:rocket-launch-rounded' },
-  ]
+  ];
+
+  const headProps = [
+    ["Profile","Nb d'utilisateur"],
+    ["Utilisateur","Nb Ouvertures", "Nb Ajouts","Profil"],
+    ["Profil","Utilisateur en Onboarding","Utilisateurs Actifs","Comptes désactivés"]
+  ];
 
   return (
     <div className="bg-[#FFFAF5] w-screen min-h-screen">
@@ -104,7 +111,8 @@ function App() {
               <div className='flex flex-row text-primaryBrown font-Steradian_md justify-center items-center'>
           <LineText text="Top 10 des profils par nombre d'utilisateurs" icon="uis:graph-bar" textSize="text-[1.7rem]" iconSize="9" />
               </div>
-              <Table data={Data?.top_Profiles} ellipsis={false}/>
+              <TopProfiles headProps={headProps[0]} data={Data?.top_Profiles} ellipsis={false}/>
+              <Stats headProps={headProps[1]} data={Data?.top_activities} ellipsis={true}/>
             </div>
           </div>
           <Chart />

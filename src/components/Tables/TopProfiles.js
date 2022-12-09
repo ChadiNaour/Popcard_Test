@@ -7,9 +7,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Icon } from '@iconify/react';
-import Default_User from "../images/Default_User.png";
+import Default_User from "../../images/Default_User.png";
 
-export default function BasicTable({ data, ellipsis }) {
+export default function BasicTable({ headProps, data, ellipsis }) {
   function createData(Id, Profile, Number, Image) {
     return { Id, Profile, Number, Image };
   }
@@ -19,7 +19,7 @@ export default function BasicTable({ data, ellipsis }) {
   data.data.map((row, i) => {
     rows.push(createData(i + 1, row.name, row.total_collaborators, row.logo));
   })
-  console.log(rows)
+  // console.log(rows)
 
   return (
     <TableContainer component={Paper} sx={{ borderRadius: "20px", width: "auto", padding: "20px", paddingTop: "10px" }}>
@@ -27,8 +27,11 @@ export default function BasicTable({ data, ellipsis }) {
         <TableHead>
           <TableRow>
             <TableCell style={{ fontFamily: "Puplic_Sans", fontWeight: "bold" }}></TableCell>
-            <TableCell align="center" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold", fontSize: "17px", color: "#4E3131" }}>Profile</TableCell>
-            <TableCell align="center" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold", fontSize: "17px", color: "#4E3131" }}>Nb d'utilisateur</TableCell>
+            {headProps.map((prop, index) => (
+              <TableCell key={index} align="center" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold", fontSize: "17px", color: "#4E3131" }}>{prop}</TableCell>
+
+            ))
+            }
             {ellipsis && <TableCell align="right" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold" }}></TableCell>}
           </TableRow>
         </TableHead>
