@@ -3,24 +3,25 @@
 @tailwind utilities;
 
 @font-face {
-            font-family: 'Puplic_Sans';
-            font-style: bold;
-            font-weight: 400;
-            src: url('./fonts/Public_Sans/PublicSans-VariableFont_wght.ttf') format('truetype');
-            font-display: swap;
-          }
+  font-family: "Puplic_Sans";
+  font-style: bold;
+  font-weight: 400;
+  src: url("./fonts/Public_Sans/PublicSans-VariableFont_wght.ttf")
+    format("truetype");
+  font-display: swap;
+}
 
-          @font-face {
-            font-family: 'Steradian_md';
-            font-style: bold;
-            font-weight: 400;
-            src: url('./fonts/Steradian/Steradian-Md.ttf') format('truetype');
-            font-display: swap;
-          }
-          @font-face {
-            font-family: 'Steradian_rg';
-            font-style: bold;
-            font-weight: 400;
-            src: url('./fonts/Steradian/Steradian-Rg.ttf') format('truetype');
-            font-display: swap;
-          }
+@font-face {
+  font-family: "Steradian_md";
+  font-style: bold;
+  font-weight: 400;
+  src: url("./fonts/Steradian/Steradian-Md.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Steradian_rg";
+  font-style: bold;
+  font-weight: 400;
+  src: url("./fonts/Steradian/Steradian-Rg.ttf") format("truetype");
+  font-display: swap;
+}

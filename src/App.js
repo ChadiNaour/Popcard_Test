@@ -8,7 +8,8 @@ import Table from "./components/Table"
 import LineText from "./components/LineText";
 import Chart from "./components/Charts";
 import Alert from "./components/Alert";
-import Api from "./Api/Api";
+import Api from "./api/api";
+import { Icon } from '@iconify/react';
 
 
 
@@ -93,10 +94,20 @@ function App() {
         <div className='w-[95%] bg-[#CCB7B7] h-[.5px]'></div>
         {Data && <div className=' w-full flex flex-col gap-20 py-6'>
           {error && <Alert error={error} />}
-          {General_Stats.map((stat, index) => (
-            <LittleCard key={index} title={stat.title} value={stat.value} icon={stat.icon} color="white" />))
-          }
-          <Table />
+          <div className='flex w-full flex-row justify-between'>
+            <div className='flex w-auto flex-col gap-5'>
+              {General_Stats.map((stat, index) => (
+                <LittleCard key={index} title={stat.title} value={stat.value} icon={stat.icon} color="white" />))
+              }
+            </div>
+            <div className='flex flex-col w-2/3 gap-4'>
+              <div className='flex flex-row text-primaryBrown font-Steradian_md justify-center items-center'>
+                <Icon icon="material-symbols:bar-chart" className=" h-7 w-7" />
+                <h2 className='text-2xl'>Top 10 des profils par nombre d'utilisateurs</h2>
+              </div>
+              <Table />
+            </div>
+          </div>
           <Chart />
         </div>}
       </div>

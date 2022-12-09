@@ -22,7 +22,7 @@ const rows = [
 
 export default function BasicTable() {
   return (
-    <TableContainer component={Paper} sx={{ borderRadius: "20px", width: "500px", padding: "20px", paddingTop: "10px" }}>
+    <TableContainer component={Paper} sx={{ borderRadius: "20px", width: "auto", padding: "20px", paddingTop: "10px" }}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
