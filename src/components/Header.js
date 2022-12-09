@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 
 const Header = () => {
   return (
-    <div className="absolute bg-[#FFFAF5] top-0 left-72 right-0 h-48 flex justify-between px-14 items-center">
+    <div className="w-full h-48 flex justify-between items-center">
       <div className='h-full flex flex-col justify-center gap-1 items-start'>
         <span className='text-4xl font-Steradian_md'>Bonjour Aymane !</span>
         <span className='text-lg font-Puplic_Sans'>Nous somme le Samedi 3 Decembre 2022</span>

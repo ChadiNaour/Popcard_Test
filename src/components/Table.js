@@ -25,7 +25,7 @@ export default function BasicTable() {
   useEffect(() => {
     const General_stats = async () => {
       try {
-        const stats = await Api.General_stats('test',{ action: 0 })
+        const stats = await Api.General_stats('test', { action: 0 })
         console.log(stats);
 
       } catch (e) {
@@ -41,8 +41,8 @@ export default function BasicTable() {
         <TableHead>
           <TableRow>
             <TableCell style={{ fontFamily: "Puplic_Sans", fontWeight: "bold" }}></TableCell>
-            <TableCell align="center" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold", fontSize: "17px" }}>Profile</TableCell>
-            <TableCell align="center" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold", fontSize: "17px" }}>Nb d'utilisateur</TableCell>
+            <TableCell align="center" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold", fontSize: "17px", color: "#4E3131" }}>Profile</TableCell>
+            <TableCell align="center" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold", fontSize: "17px", color: "#4E3131" }}>Nb d'utilisateur</TableCell>
             <TableCell align="right" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold" }}></TableCell>
           </TableRow>
         </TableHead>
@@ -58,7 +58,7 @@ export default function BasicTable() {
                 </TableCell>
                 <TableCell style={{ fontFamily: "Steradian_rg", fontSize: "17px" }} align="center"><div className='flex flex-row justify-center items-center'><div className='w-7 h-7 bg-red-200 rounded-full mr-3'></div>{row.Profile}</div></TableCell>
                 <TableCell style={{ fontFamily: "Steradian_md", fontSize: "19px" }} align="center">{row.Number}</TableCell>
-                <TableCell align='right'><Icon icon="ion:ellipsis-vertical-sharp" className="text-black h-7 w-7" /></TableCell>
+                <TableCell align='right'><Icon icon="ion:ellipsis-vertical-sharp" className="text-black h-6 w-6"/></TableCell>
               </TableRow>
             </>
           ))}
