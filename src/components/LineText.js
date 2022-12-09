@@ -8,7 +8,7 @@ const LineText = ({ text, icon, textSize, iconSize }) => {
       <span className="font-Steradian_md text-primaryBrown flex flex-row items-start">
         <Icon
           icon={icon}
-          className={`text-primaryRed h-${iconSize} w-${iconSize} mr-2`}
+          className={`text-primaryRed mr-2 ${iconSize}`}
         />
         {text}
       </span>

@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 import { Icon } from '@iconify/react';
 import Default_User from "../../images/Default_User.png";
 
-export default function BasicTable({ headProps, data, ellipsis }) {
+export default function TopProfiles({ headProps, data, ellipsis }) {
   function createData(Id, Profile, Number, Image) {
     return { Id, Profile, Number, Image };
   }
@@ -28,7 +28,7 @@ export default function BasicTable({ headProps, data, ellipsis }) {
           <TableRow>
             <TableCell style={{ fontFamily: "Puplic_Sans", fontWeight: "bold" }}></TableCell>
             {headProps.map((prop, index) => (
-              <TableCell key={index} align="center" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold", fontSize: "17px", color: "#4E3131" }}>{prop}</TableCell>
+              <TableCell key={index} align="center" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold", fontSize: "18px", color: "#4E3131" }}>{prop}</TableCell>
 
             ))
             }
@@ -36,7 +36,7 @@ export default function BasicTable({ headProps, data, ellipsis }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.slice(0, 5).map((row) => (
             <TableRow
               key={row.Id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -45,7 +45,7 @@ export default function BasicTable({ headProps, data, ellipsis }) {
                 <div className='w-7 h-7 bg-primaryBrown rounded-full flex justify-center items-center text-white'>{row.Id}</div>
               </TableCell>
               <TableCell style={{ fontFamily: "Steradian_rg", fontSize: "17px" }} align="left">
-                <div className='flex flex-row items-center gap-3'><img className='w-5 h-5 object-fill' src={row.Image ? row.Image : Default_User} />{row.Profile}</div>
+                <div className='flex flex-row items-center gap-3'><img className='w-6 h-6 object-fill' src={row.Image ? row.Image : Default_User} />{row.Profile}</div>
               </TableCell>
               <TableCell style={{ fontFamily: "Steradian_md", fontSize: "19px" }} align="center">{row.Number}</TableCell>
               {ellipsis && <TableCell align='right'><Icon icon="ion:ellipsis-vertical-sharp" className="text-black h-6 w-6" /></TableCell>}
@@ -53,7 +53,7 @@ export default function BasicTable({ headProps, data, ellipsis }) {
           ))}
         </TableBody>
       </Table>
-      <div className="w-full flex justify-center items-center my-4">
+      <div className="w-full flex justify-center items-center my-3">
         <div className='bg-black rounded-full px-4 py-2'>
 
           <span className='text-white font-Puplic_Sans'>Charger Toutle La Liste</span>

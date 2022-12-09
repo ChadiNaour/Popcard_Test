@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 import { Icon } from '@iconify/react';
 import Default_User from "../../images/Default_User.png";
 
-export default function BasicTable({ headProps, data, ellipsis }) {
+export default function UsersStats({ headProps, data, ellipsis }) {
     function createData(Id, Fullname, Profile, Profile_picture, Total_Add, Total_Open) {
         return { Id, Fullname, Profile, Profile_picture, Total_Add, Total_Open };
     }
@@ -35,7 +35,7 @@ export default function BasicTable({ headProps, data, ellipsis }) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row) => (
+                    {rows.slice(0, 4).map((row) => (
                         <TableRow
                             key={row.Id}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -44,7 +44,7 @@ export default function BasicTable({ headProps, data, ellipsis }) {
                                 <div className='w-7 h-7 bg-primaryBrown rounded-full flex justify-center items-center text-white'>{row.Id}</div>
                             </TableCell>
                             <TableCell style={{ fontFamily: "Steradian_rg", fontSize: "17px" }} align="left">
-                                <div className='flex flex-row items-center gap-3'><img className='w-5 h-5 object-fill' src={row.Profile_picture}/>{row.Fullname}</div>
+                                <div className='flex flex-row items-center gap-3'><img className='w-5 h-5 object-fill' src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80" />{row.Fullname}</div>
                             </TableCell>
                             <TableCell style={{ fontFamily: "Steradian_md", fontSize: "19px" }} align="center">{row.Total_Add}</TableCell>
                             <TableCell style={{ fontFamily: "Steradian_md", fontSize: "19px" }} align="center">{row.Total_Open}</TableCell>

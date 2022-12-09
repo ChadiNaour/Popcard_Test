@@ -5,12 +5,12 @@ import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import LittleCard from './components/littleCard'
 import TopProfiles from "./components/Tables/TopProfiles"
-import Stats from "./components/Tables/Stats"
+import UsersStats from "./components/Tables/usersStats"
+import ProfileStats from "./components/Tables/profileStats"
 import LineText from "./components/LineText";
-import Chart from "./components/Charts";
+import Chart from "./components/Charts/Charts";
 import Alert from "./components/Alert";
 import Api from "./Api/api";
-import { Icon } from '@iconify/react';
 
 
 
@@ -87,35 +87,45 @@ function App() {
   ];
 
   const headProps = [
-    ["Profile","Nb d'utilisateur"],
-    ["Utilisateur","Nb Ouvertures", "Nb Ajouts","Profil"],
-    ["Profil","Utilisateur en Onboarding","Utilisateurs Actifs","Comptes désactivés"]
+    ["Profile", "Nb d'utilisateur"],
+    ["Utilisateur", "Nb Ouvertures", "Nb Ajouts", "Profil"],
+    ["Profil", "Utilisateur en Onboarding", "Utilisateurs Actifs", "Comptes désactivés"]
   ];
 
   return (
     <div className="bg-[#FFFAF5] w-screen min-h-screen">
       <Sidebar />
-      <div className='ml-72 px-40 bg-[#FFFAF5] flex flex-col'>
+      <div className='ml-72 px-[8rem] bg-[#FFFAF5] flex flex-col'>
         <Header />
         <LineText text="Dashboard" icon="material-symbols:dashboard" textSize="text-[2.2rem]" iconSize="11" />
-        <div className='w-[95%] bg-[#CCB7B7] h-[.5px]'></div>
-        {Data && <div className=' w-full flex flex-col gap-20 py-6'>
-          {error && <Alert error={error} />}
-          <div className='flex w-full flex-row justify-between'>
-            <div className='flex w-auto flex-col gap-5'>
-              {General_Stats.map((stat, index) => (
-                <LittleCard key={index} title={stat.title} value={stat.value} icon={stat.icon} color="white" />))
-              }
-            </div>
-            <div className='flex flex-col w-2/3 gap-4'>
-              <div className='flex flex-row text-primaryBrown font-Steradian_md justify-center items-center'>
-          <LineText text="Top 10 des profils par nombre d'utilisateurs" icon="uis:graph-bar" textSize="text-[1.7rem]" iconSize="9" />
+        <div className='bg-[#CCB7B7] h-[.5px]'></div>
+        {Data && <div className='flex flex-col gap-12 pt-8'>
+          <div className=' w-full flex flex-col gap-20'>
+            {error && <Alert error={error} />}
+            <div className='flex w-full flex-row justify-between'>
+              <div className='flex w-auto flex-col gap-5'>
+                {General_Stats.map((stat, index) => (
+                  <LittleCard key={index} title={stat.title} value={stat.value} icon={stat.icon} color="white" />))
+                }
               </div>
-              <TopProfiles headProps={headProps[0]} data={Data?.top_Profiles} ellipsis={false}/>
-              <Stats headProps={headProps[1]} data={Data?.top_activities} ellipsis={true}/>
+              <div className='flex flex-col w-2/3 gap-4'>
+                <LineText text="Top 10 des utilisateurs par nombre d'utilisateurs" icon="uis:graph-bar" textSize="text-[1.5rem]" iconSize="w-8 h-8" />
+                <TopProfiles headProps={headProps[0]} data={Data?.top_Profiles} ellipsis={false} />
+              </div>
             </div>
           </div>
-          <Chart />
+          <div className='flex flex-col gap-2'>
+            <LineText text="Top 10 des utilisateurs par activite" icon="uis:graph-bar" textSize="text-[1.5rem]" iconSize="w-8 h-8" />
+            <UsersStats headProps={headProps[1]} data={Data?.top_activities} ellipsis={true} />
+          </div>
+          <div className='flex flex-col gap-2'>
+            <LineText text="Statistiques par profile" icon="mdi:graph-pie" textSize="text-[1.5rem]" iconSize="w-9 h-9" />
+            <ProfileStats headProps={headProps[2]} data={Data?.profile_stats} ellipsis={true} />
+          </div>
+          <div className='flex flex-col gap-2'>
+            <LineText text="Statistiques d’usage des cartes de visites" icon="mdi:graph-pie" textSize="text-[1.5rem]" iconSize="w-9 h-9" />
+            <Chart data={Data?.tracking_charts} />
+          </div>
         </div>}
       </div>
     </div>
