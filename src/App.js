@@ -55,7 +55,7 @@ function App() {
         });
         await Promise.all([general_stats, top_Profiles, profile_stats, top_activities, tracking_charts, chiffre_daffaires]).then((data) => {
           setLoading(false);
-          console.log(data)
+          // console.log(data)
           setData({
             general_stats: data[0].data,
             top_Profiles: data[1].data,
@@ -79,10 +79,10 @@ function App() {
   }
 
   const General_Stats = [
-    {title: "Profils créés", value: Data?.general_stats.total_profiles, icon: 'ic:baseline-edit-off' },
-    {title: "Total Utilisateurs", value: Data?.general_stats.total_collaborators, icon: 'material-symbols:rocket-launch-rounded' },
-    {title: "% Onboarding", value: `${parseInt(percentage(Data?.general_stats.onboarding, Data?.general_stats.total_collaborators))}%`, icon: 'material-symbols:rocket-launch-rounded' },
-    {title: "% Actifs", value: `${parseInt(percentage(Data?.general_stats.active, Data?.general_stats.total_collaborators))}%`, icon: 'material-symbols:rocket-launch-rounded' },
+    { title: "Profils créés", value: Data?.general_stats.total_profiles, icon: 'ic:baseline-edit-off' },
+    { title: "Total Utilisateurs", value: Data?.general_stats.total_collaborators, icon: 'mdi:users' },
+    { title: "% Onboarding", value: `${parseInt(percentage(Data?.general_stats.onboarding, Data?.general_stats.total_collaborators))}%`, icon: 'icon-park-outline:loading-one' },
+    { title: "% Actifs", value: `${parseInt(percentage(Data?.general_stats.active, Data?.general_stats.total_collaborators))}%`, icon: 'material-symbols:rocket-launch-rounded' },
   ]
 
   return (
@@ -102,10 +102,9 @@ function App() {
             </div>
             <div className='flex flex-col w-2/3 gap-4'>
               <div className='flex flex-row text-primaryBrown font-Steradian_md justify-center items-center'>
-                <Icon icon="material-symbols:bar-chart" className=" h-7 w-7" />
-                <h2 className='text-2xl'>Top 10 des profils par nombre d'utilisateurs</h2>
+          <LineText text="Top 10 des profils par nombre d'utilisateurs" icon="uis:graph-bar" textSize="text-[1.7rem]" iconSize="9" />
               </div>
-              <Table />
+              <Table data={Data?.top_Profiles} ellipsis={false}/>
             </div>
           </div>
           <Chart />

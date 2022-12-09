@@ -7,20 +7,20 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Icon } from '@iconify/react';
+import Default_User from "../images/Default_User.png";
 
-function createData(Id, Profile, Number) {
-  return { Id, Profile, Number };
-}
+export default function BasicTable({ data, ellipsis }) {
+  function createData(Id, Profile, Number, Image) {
+    return { Id, Profile, Number, Image };
+  }
 
-const rows = [
-  createData(1, 'Entreprise 1', 159),
-  createData(2, 'Entreprise 2', 237),
-  createData(3, 'Entreprise 3', 262),
-  createData(4, 'Entreprise 4', 305),
-  createData(5, 'Entreprise 5', 356),
-];
+  const rows = [];
 
-export default function BasicTable() {
+  data.data.map((row, i) => {
+    rows.push(createData(i + 1, row.name, row.total_collaborators, row.logo));
+  })
+  console.log(rows)
+
   return (
     <TableContainer component={Paper} sx={{ borderRadius: "20px", width: "auto", padding: "20px", paddingTop: "10px" }}>
       <Table aria-label="simple table">
@@ -29,7 +29,7 @@ export default function BasicTable() {
             <TableCell style={{ fontFamily: "Puplic_Sans", fontWeight: "bold" }}></TableCell>
             <TableCell align="center" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold", fontSize: "17px", color: "#4E3131" }}>Profile</TableCell>
             <TableCell align="center" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold", fontSize: "17px", color: "#4E3131" }}>Nb d'utilisateur</TableCell>
-            <TableCell align="right" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold" }}></TableCell>
+            {ellipsis && <TableCell align="right" style={{ fontFamily: "Puplic_Sans", fontWeight: "bold" }}></TableCell>}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -41,9 +41,11 @@ export default function BasicTable() {
               <TableCell style={{ fontFamily: "Steradian_rg" }} component="th" scope="row">
                 <div className='w-7 h-7 bg-primaryBrown rounded-full flex justify-center items-center text-white'>{row.Id}</div>
               </TableCell>
-              <TableCell style={{ fontFamily: "Steradian_rg", fontSize: "17px" }} align="center"><div className='flex flex-row justify-center items-center'><div className='w-7 h-7 bg-red-200 rounded-full mr-3'></div>{row.Profile}</div></TableCell>
+              <TableCell style={{ fontFamily: "Steradian_rg", fontSize: "17px" }} align="left">
+                <div className='flex flex-row items-center gap-3'><img className='w-5 h-5 object-fill' src={row.Image ? row.Image : Default_User} />{row.Profile}</div>
+              </TableCell>
               <TableCell style={{ fontFamily: "Steradian_md", fontSize: "19px" }} align="center">{row.Number}</TableCell>
-              <TableCell align='right'><Icon icon="ion:ellipsis-vertical-sharp" className="text-black h-6 w-6" /></TableCell>
+              {ellipsis && <TableCell align='right'><Icon icon="ion:ellipsis-vertical-sharp" className="text-black h-6 w-6" /></TableCell>}
             </TableRow>
           ))}
         </TableBody>
