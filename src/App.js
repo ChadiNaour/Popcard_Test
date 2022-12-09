@@ -54,7 +54,7 @@ function App() {
         });
         await Promise.all([general_stats, top_Profiles, profile_stats, top_activities, tracking_charts, chiffre_daffaires]).then((data) => {
           setLoading(false);
-          console.log(data)
+          // console.log(data)
           setData({
             general_stats: data[0].data,
             top_Profiles: data[1].data,
@@ -78,10 +78,10 @@ function App() {
   }
 
   const General_Stats = [
-    {title: "Profils créés", value: Data?.general_stats.total_profiles, icon: 'ic:baseline-edit-off' },
-    {title: "Total Utilisateurs", value: Data?.general_stats.total_collaborators, icon: 'material-symbols:rocket-launch-rounded' },
-    {title: "% Onboarding", value: `${parseInt(percentage(Data?.general_stats.onboarding, Data?.general_stats.total_collaborators))}%`, icon: 'material-symbols:rocket-launch-rounded' },
-    {title: "% Actifs", value: `${parseInt(percentage(Data?.general_stats.active, Data?.general_stats.total_collaborators))}%`, icon: 'material-symbols:rocket-launch-rounded' },
+    { title: "Profils créés", value: Data?.general_stats.total_profiles, icon: 'ic:baseline-edit-off' },
+    { title: "Total Utilisateurs", value: Data?.general_stats.total_collaborators, icon: 'mdi:users' },
+    { title: "% Onboarding", value: `${parseInt(percentage(Data?.general_stats.onboarding, Data?.general_stats.total_collaborators))}%`, icon: 'icon-park-outline:loading-one' },
+    { title: "% Actifs", value: `${parseInt(percentage(Data?.general_stats.active, Data?.general_stats.total_collaborators))}%`, icon: 'material-symbols:rocket-launch-rounded' },
   ]
 
   return (
@@ -93,10 +93,13 @@ function App() {
         <div className='w-[95%] bg-[#CCB7B7] h-[.5px]'></div>
         {Data && <div className=' w-full flex flex-col gap-20 py-6'>
           {error && <Alert error={error} />}
-          {General_Stats.map((stat, index) => (
-            <LittleCard key={index} title={stat.title} value={stat.value} icon={stat.icon} color="white" />))
-          }
-          <Table />
+          <div>
+            {General_Stats.map((stat, index) => (
+              <LittleCard key={index} title={stat.title} value={stat.value} icon={stat.icon} color="white" />))
+            }
+          </div>
+          <LineText text="Top 10 des profils par nombre d'utilisateurs" icon="uis:graph-bar" textSize="text-[1.7rem]" iconSize="9" />
+          <Table data={Data?.top_Profiles} ellipsis={false}/>
           <Chart />
         </div>}
       </div>
