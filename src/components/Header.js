@@ -1,12 +1,19 @@
+import React, { useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import Card from '@mui/material/Card';
+import { fr } from 'faker/lib/locales';
+import moment from 'moment';
+
+moment.locale('fr');
 
 const Header = () => {
+  
+
   return (
     <div className="w-full h-48 flex justify-between items-center">
       <div className='h-full flex flex-col justify-center gap-1 items-start'>
         <span className='text-4xl font-Steradian_md'>Bonjour Aymane !</span>
-        <span className='text-lg font-Puplic_Sans'>Nous somme le Samedi 3 Decembre 2022</span>
+        <span className='text-lg font-Puplic_Sans'>Nous somme le {moment().format('LLLL')}</span>
       </div>
       <div className="h-full flex justify-end items-center -mt-6">
         <Card sx={{ borderRadius: '40px' }}

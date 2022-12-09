@@ -128,9 +128,9 @@ const Charts = () => {
                     </LocalizationProvider>
                 </div>
             </div>
-            <div className='w-full h-[350px] bg-red-300'>
+            <div className='flex w-full justify-center'>
 
-                <Line options={options} data={data} />
+                <Line options={options} data={data} className="w-full h-full" />
             </div>
         </Card>
     )
