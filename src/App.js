@@ -8,7 +8,8 @@ import TopProfiles from "./components/Tables/TopProfiles"
 import UsersStats from "./components/Tables/usersStats"
 import ProfileStats from "./components/Tables/profileStats"
 import LineText from "./components/LineText";
-import Chart from "./components/Charts/Charts";
+import Chart1 from "./components/Charts/usageCharts";
+import Chart2 from "./components/Charts/chiffreACharts";
 import Alert from "./components/Alert";
 import Api from "./Api/api";
 
@@ -99,34 +100,38 @@ function App() {
         <Header />
         <LineText text="Dashboard" icon="material-symbols:dashboard" textSize="text-[2.2rem]" iconSize="11" />
         <div className='bg-[#CCB7B7] h-[.5px]'></div>
-        {Data && <div className='flex flex-col gap-12 pt-8'>
+        {Data ? <div className='flex flex-col gap-12 pt-8'>
           <div className=' w-full flex flex-col gap-20'>
             {error && <Alert error={error} />}
             <div className='flex w-full flex-row justify-between'>
               <div className='flex w-auto flex-col gap-5'>
                 {General_Stats.map((stat, index) => (
-                  <LittleCard key={index} title={stat.title} value={stat.value} icon={stat.icon} color="white" />))
+                  <LittleCard key={index} title={stat.title} value={stat.value} icon={stat.icon} type={0} />))
                 }
               </div>
               <div className='flex flex-col w-2/3 gap-4'>
                 <LineText text="Top 10 des utilisateurs par nombre d'utilisateurs" icon="uis:graph-bar" textSize="text-[1.5rem]" iconSize="w-8 h-8" />
-                <TopProfiles headProps={headProps[0]} data={Data?.top_Profiles} ellipsis={false} />
+                <TopProfiles headProps={headProps[0]} data={Data.top_Profiles} ellipsis={false} />
               </div>
             </div>
           </div>
           <div className='flex flex-col gap-2'>
             <LineText text="Top 10 des utilisateurs par activite" icon="uis:graph-bar" textSize="text-[1.5rem]" iconSize="w-8 h-8" />
-            <UsersStats headProps={headProps[1]} data={Data?.top_activities} ellipsis={true} />
+            <UsersStats headProps={headProps[1]} data={Data.top_activities} ellipsis={true} />
           </div>
           <div className='flex flex-col gap-2'>
             <LineText text="Statistiques par profile" icon="mdi:graph-pie" textSize="text-[1.5rem]" iconSize="w-9 h-9" />
-            <ProfileStats headProps={headProps[2]} data={Data?.profile_stats} ellipsis={true} />
+            <ProfileStats headProps={headProps[2]} data={Data.profile_stats} ellipsis={true} />
           </div>
           <div className='flex flex-col gap-2'>
             <LineText text="Statistiques d’usage des cartes de visites" icon="mdi:graph-pie" textSize="text-[1.5rem]" iconSize="w-9 h-9" />
-            <Chart data={Data?.tracking_charts} />
+            <Chart1 charts={Data.tracking_charts} />
           </div>
-        </div>}
+          <div className='flex flex-col gap-2'>
+            <LineText text="Statistiques d’usage des cartes de visites" icon="mdi:graph-pie" textSize="text-[1.5rem]" iconSize="w-9 h-9" />
+            <Chart2 charts={Data.chiffre_daffaires} />
+          </div>
+        </div> : <></>}
       </div>
     </div>
   );
