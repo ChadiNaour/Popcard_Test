@@ -3,17 +3,20 @@ import { Icon } from '@iconify/react';
 import Card from '@mui/material/Card';
 import { fr } from 'faker/lib/locales';
 import moment from 'moment';
+import 'moment/locale/fr';
 
-moment.locale('fr');
 
 const Header = () => {
-  
+
+  moment.locale('fr');
+
+  const today = moment().locale('fr').format('LLLL').split(' ').splice(0, 4).toString().replaceAll(',', ' ');
 
   return (
     <div className="w-full h-48 flex justify-between items-center">
       <div className='h-full flex flex-col justify-center gap-1 items-start'>
         <span className='text-4xl font-Steradian_md'>Bonjour Aymane !</span>
-        <span className='text-lg font-Puplic_Sans'>Nous somme le {moment().format('LLLL')}</span>
+        <span className='text-lg font-Puplic_Sans'>Nous somme le {today}</span>
       </div>
       <div className="h-full flex justify-end items-center -mt-6">
         <Card sx={{ borderRadius: '40px' }}
