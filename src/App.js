@@ -11,7 +11,7 @@ import LineText from "./components/LineText";
 import Chart1 from "./components/Charts/usageCharts";
 import Chart2 from "./components/Charts/chiffreACharts";
 import Alert from "./components/Alert";
-import Api from "./Api/api";
+import Api from "./api/api";
 
 
 
