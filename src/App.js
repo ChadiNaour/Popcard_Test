@@ -96,7 +96,7 @@ function App() {
   return (
     <div className="bg-[#FFFAF5] w-screen min-h-screen">
       <Sidebar />
-      <div className='ml-72 px-[8rem] bg-[#FFFAF5] flex flex-col'>
+      <div className='ml-72 px-[8rem] bg-[#FFFAF5] flex flex-col pb-20'>
         <Header />
         <LineText text="Dashboard" icon="material-symbols:dashboard" textSize="text-[2.2rem]" iconSize="11" />
         <div className='bg-[#CCB7B7] h-[.5px]'></div>

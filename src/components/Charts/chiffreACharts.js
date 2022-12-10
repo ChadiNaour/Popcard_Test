@@ -128,10 +128,10 @@ const Charts = ({ charts }) => {
                     </FormControl>
                 </div>
             </div>
-            <div className='flex w-full px-8 pb-4 justify-center  pb-4'>
+            <div className='flex w-full px-8 justify-center'>
                 <Line data={chartData} className="w-full h-full" />
             </div>
-            <div className='flex flex-row justify-start items-center gap-8'>
+            <div className='w-full flex flex-row justify-start items-center gap-8 px-8 pb-4'>
             <LittleCard title="Total CA sur la période" value={`${calculateTotal(charts.data).totalCA} Dhs`} icon="material-symbols:database" type={1} />
             <LittleCard title="Total réductions sur la periode" value={`${calculateTotal(charts.data).totalReduction} Dhs`} icon="ant-design:percentage-outlined" type={1} />
 
